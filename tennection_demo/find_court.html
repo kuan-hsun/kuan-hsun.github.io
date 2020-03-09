@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html,
+    body,
+    #map-container {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      font-family: sans-serif;
+    }
+  </style>
+
+
+  <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Tennection</title>
+</head>
+
+<body>
+  <!--header-->
+  <header>
+    <div class="container-fluid">
+      <div class="row my-row">
+
+        <div class="col-md-4 col-12 bg-dark">
+          <div class="btn-group">
+            <button class="btn dropdown-toggle primary-color text-white" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              EN
+            </button>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">繁體中文</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-12 text-center bg-dark">
+          <h2 class=" site-title primary-color">Tennection</h2>
+        </div>
+
+        <div class="col-md-4 col-12 text-right bg-dark">
+          <p class=" header-links">
+            <a href="#" class="px-2">Sign In</a>
+            <a href="#" class="px-2">Create an Account</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!--nav bar-->
+    <div class="container-fluid p-0">
+      <nav class="my-navbar navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html">◀ <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <div class="checkbox">
+                      <label>Surface</label><br>
+                      <input class="checkbox checkboxSurface" type="checkbox" value="紅土[clay]"
+                        checked="checked">Clay<br>
+                      <input class="checkbox checkboxSurface" type="checkbox" value="硬地[hard]"
+                        checked="checked">Hard<br>
+                      <input class="checkbox checkboxSurface" type="checkbox" value="草地[grass]"
+                        checked="checked">Others<br>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="checkbox">
+                      <label>Management</label><br>
+                      <input class="checkboxOwnerType" type="checkbox" value="公共設施[Public]" checked="checked">Public<br>
+                      <input class="checkboxOwnerType" type="checkbox" value="高中或國中小[School]"
+                        checked="checked">School<br>
+                      <input class="checkboxOwnerType" type="checkbox" value="大專院校[University]"
+                        checked="checked">University<br>
+                      <input class="checkboxOwnerType" type="checkbox" value="俱樂部[club]" checked="checked">Club<br>
+                      <input class="checkboxOwnerType" type="checkbox" value="私人場地[private]"
+                        checked="checked">Private<br>
+                      <input class="checkboxOwnerType" type="checkbox" value="其他[other]" checked="checked">Other<br>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="checkbox">
+                      <label>Theme Map</label><br>
+                      <input id="themeLayer" type="checkbox" value="night">Night Mode<br>
+
+                    </div>
+                  </li>
+
+                </ul>
+
+                Court Filter
+              </a>
+
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">FIND BUDDY</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">ABOUT</a>
+            </li>
+
+          </ul>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search Court" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0 rounded-circle" type="submit">GO</button>
+        </form>
+    </div>
+
+
+    </nav>
+    </div>
+  </header>
+
+
+
+  <main>
+    <!--main-->
+    <div class="container-fluid p-0">
+      <!-- 地圖 -->
+      <div id="map-container"></div>
+
+
+      <!-- 底圖切換 -->
+      <select id="base-maps">
+        <option value="OSMStandard">OSM Standard</option>
+        <option value="mapboxStandard">Mapbox Standard</option>
+        <option value="mapboxSatellite">Mapbox Satellite</option>
+        <option value="cartoLight">Carto Light</option>
+        <option value="cartoDark">Carto Dark</option>
+        <option value="stamen">Stamen</option>
+      </select>
+
+      <!-- popup -->
+      <div id="popup" class="ol-popup">
+        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+        <div id="popup-content"></div>
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+
+  <!--CDNs-->
+
+
+  <!--<script type="text/javascript" src="./js/jquery/jquery-3.4.1.min.js"></script>-->
+  <!--<script type="text/javascript" src="./js/jquery/jquery-migrate-3.1.0.min.js"></script>-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+  <script src="./js/main.js"></script>
+<script type="text/javascript" src="main.js"></script></body>
+
+</html>

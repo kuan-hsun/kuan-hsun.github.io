@@ -1,0 +1,172 @@
+#div-relative{
+  position:relative;
+} 
+
+#map-container{
+  position: absolute;
+}
+
+#banner{ 
+  position:absolute;
+  width: 100%;
+  margin: 0 auto;
+  z-index:100;
+  height:30px;
+  opacity:0.95; 
+  font-size:x-large; 
+  color: yellowgreen;
+  text-align: justify;
+  background-color: floralwhite;
+  text-align: center;
+  vertical-align: middle;
+} 
+
+#navi{ 
+  position:absolute;
+  top: 5%;
+  left: 50%;
+  z-index:100;
+  width:70%;
+  height:50px;
+  opacity:0.8; 
+  font-size:medium; 
+  margin: 0 0 0 -35%;
+  text-align: justify;]
+} 
+
+#navi:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.navitem {
+  display: inline-block;
+  background-color: violet;
+  border-radius: 30px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+
+
+
+
+#court-selector{ position:absolute;left:2px;top:130px;z-index:100;} 
+
+#mySidenavOpen{ position:absolute;left:4px;z-index:80;font-weight: 800;} 
+
+#mySidenav{ position:absolute;z-index:90;} 
+
+#base-layers{ position:absolute;right:2px;bottom:50px;z-index:100;} 
+
+#base-maps{ position:absolute;right:2px;bottom:50px;z-index:100;} 
+
+#test-button{ position:absolute;right:2px;bottom:250px;z-index:200;} 
+
+#court_selector{ display:none; font-weight: 400; padding: 8px 8px 8px 32px; color: #ebebeb;} 
+
+.checkboxSurface{
+  color: #f1f1f1;
+  transition: 0.3s;
+}
+
+.checkboxSurface a:hover {
+  color: #f1f1f1;
+}
+
+.locate {
+  top: 6em;
+  left: .5em;
+}
+.ol-popup {
+position: absolute;
+background-color: white;
+box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+padding: 15px;
+border-radius: 10px;
+border: 1px solid #cccccc;
+bottom: 12px;
+left: -50px;
+min-width: 280px;
+}
+.ol-popup:after, .ol-popup:before {
+top: 100%;
+border: solid transparent;
+content: " ";
+height: 0;
+width: 0;
+position: absolute;
+pointer-events: none;
+}
+.ol-popup:after {
+border-top-color: white;
+border-width: 10px;
+left: 48px;
+margin-left: -10px;
+}
+.ol-popup:before {
+border-top-color: #cccccc;
+border-width: 11px;
+left: 48px;
+margin-left: -11px;
+}
+.ol-popup-closer {
+text-decoration: none;
+position: absolute;
+top: 2px;
+right: 8px;
+}
+.ol-popup-closer:after {
+content: "✖";
+}
+#popup-content{
+  font-size: small;
+  font-family: 'Microsoft JhengHei';
+  padding:0px;
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  opacity: 0.9;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+

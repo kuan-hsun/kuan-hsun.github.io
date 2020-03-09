@@ -1,0 +1,20 @@
+{
+  "type":"Feature",
+  "geometry":
+    {
+      "type":"Point",
+	  "coordinates":[120.289843,22.628524]},
+	  "properties":{
+		"cartodb_id":18,
+		"name":"兩面紅土球場",
+		"description":false,
+		"tel":"",
+		"surface":"紅土[clay]",
+		"city":"高雄市[Kaohsiung City]",
+		"type":"",
+		"charge":"",
+		"number_of_courts":2,
+		"address":"",
+		"light":null
+	}
+}
