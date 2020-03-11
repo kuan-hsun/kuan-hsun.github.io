@@ -18,8 +18,8 @@
 
 
   <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="./css/find_court.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" type="text/css" href="./css/find_court.css">
+  <link rel="stylesheet" type="text/css" href="./css/index.css">
 
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -35,107 +35,76 @@
     <div class="container-fluid">
       <div class="row my-row">
 
-        <div class="col-4 bg-dark">
-          <div class="btn-group">
-            <button class="btn dropdown-toggle primary-color text-white" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              EN
-            </button>
-            <div class="dropdown-menu">
-              <a href="#" class="dropdown-item">繁體中文</a>
-            </div>
-          </div>
+        <div class="col-6 bg-dark">
+          <h2 class="site-title primary-color">Tennection</h2>
         </div>
 
-        <div class="col-4 text-center bg-dark">
-          <h2 class=" site-title primary-color">Tennection</h2>
-        </div>
+        <div class="col-3 bg-dark">
 
-        <div class="col-4 text-right bg-dark">
+        </div>
+        <div class="col-3 text-right bg-dark">
           <p class=" header-links">
             <a href="#" class="px-2">Sign In</a>
           </p>
         </div>
 
+        <button class="btn btn-filter btn-outline-info" data-toggle="modal"
+          data-target=".bd-example-modal-lg">filter</button>
+
       </div>
     </div>
 
-    <!--nav bar-->
-    <div class="container-fluid p-0">
-      <nav class="my-navbar navbar navbar-expand-lg navbar-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="./index.html">◀ <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+    <!--filter modal-->
+   <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Tennis Court Filter</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="checkbox">
+              <label>Surface</label><br>
+              <input class="checkbox checkboxSurface" type="checkbox" value="紅土[clay]" checked="checked">Clay<br>
+              <input class="checkbox checkboxSurface" type="checkbox" value="硬地[hard]" checked="checked">Hard<br>
+              <input class="checkbox checkboxSurface" type="checkbox" value="草地[grass]" checked="checked">Others<br>
+            </div>
 
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="checkbox">
-                      <label>Surface</label><br>
-                      <input class="checkbox checkboxSurface" type="checkbox" value="紅土[clay]"
-                        checked="checked">Clay<br>
-                      <input class="checkbox checkboxSurface" type="checkbox" value="硬地[hard]"
-                        checked="checked">Hard<br>
-                      <input class="checkbox checkboxSurface" type="checkbox" value="草地[grass]"
-                        checked="checked">Others<br>
-                    </div>
-                  </li>
+            <div class="checkbox">
+              <label>Management</label><br>
+              <input class="checkboxOwnerType" type="checkbox" value="公共設施[Public]" checked="checked">Public<br>
+              <input class="checkboxOwnerType" type="checkbox" value="高中或國中小[School]" checked="checked">School<br>
+              <input class="checkboxOwnerType" type="checkbox" value="大專院校[University]" checked="checked">University<br>
+              <input class="checkboxOwnerType" type="checkbox" value="俱樂部[club]" checked="checked">Club<br>
+              <input class="checkboxOwnerType" type="checkbox" value="私人場地[private]" checked="checked">Private<br>
+              <input class="checkboxOwnerType" type="checkbox" value="其他[other]" checked="checked">Other<br>
+            </div>
 
-                  <li>
-                    <div class="checkbox">
-                      <label>Management</label><br>
-                      <input class="checkboxOwnerType" type="checkbox" value="公共設施[Public]" checked="checked">Public<br>
-                      <input class="checkboxOwnerType" type="checkbox" value="高中或國中小[School]"
-                        checked="checked">School<br>
-                      <input class="checkboxOwnerType" type="checkbox" value="大專院校[University]"
-                        checked="checked">University<br>
-                      <input class="checkboxOwnerType" type="checkbox" value="俱樂部[club]" checked="checked">Club<br>
-                      <input class="checkboxOwnerType" type="checkbox" value="私人場地[private]"
-                        checked="checked">Private<br>
-                      <input class="checkboxOwnerType" type="checkbox" value="其他[other]" checked="checked">Other<br>
-                    </div>
-                  </li>
+            <div class="checkbox">
+              <label>Theme Map</label><br>
+              <input id="themeLayer" type="checkbox" value="night">Night Mode<br>
 
-                  <li>
-                    <div class="checkbox">
-                      <label>Theme Map</label><br>
-                      <input id="themeLayer" type="checkbox" value="night">Night Mode<br>
-
-                    </div>
-                  </li>
-
-                </ul>
-
-                Court Filter
-              </a>
-
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#">FIND BUDDY</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="./about.html">ABOUT</a>
-            </li>
-
-          </ul>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search Court" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0 rounded-circle" type="submit">GO</button>
-        </form>
+      </div>
     </div>
 
+
+
+    <!--search-->
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control" type="search" placeholder="Search Court" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0 rounded" type="submit">GO</button>
+    </form>
 
     </nav>
     </div>
