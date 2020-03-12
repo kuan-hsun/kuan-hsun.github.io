@@ -56,8 +56,8 @@
 
 
     <!--filter modal-->
-   <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
+    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -67,28 +67,45 @@
             </button>
           </div>
           <div class="modal-body">
-            <div class="checkbox">
-              <label>Surface</label><br>
-              <input class="checkbox checkboxSurface" type="checkbox" value="紅土[clay]" checked="checked">Clay<br>
-              <input class="checkbox checkboxSurface" type="checkbox" value="硬地[hard]" checked="checked">Hard<br>
-              <input class="checkbox checkboxSurface" type="checkbox" value="草地[grass]" checked="checked">Others<br>
-            </div>
 
-            <div class="checkbox">
-              <label>Management</label><br>
-              <input class="checkboxOwnerType" type="checkbox" value="公共設施[Public]" checked="checked">Public<br>
-              <input class="checkboxOwnerType" type="checkbox" value="高中或國中小[School]" checked="checked">School<br>
-              <input class="checkboxOwnerType" type="checkbox" value="大專院校[University]" checked="checked">University<br>
-              <input class="checkboxOwnerType" type="checkbox" value="俱樂部[club]" checked="checked">Club<br>
-              <input class="checkboxOwnerType" type="checkbox" value="私人場地[private]" checked="checked">Private<br>
-              <input class="checkboxOwnerType" type="checkbox" value="其他[other]" checked="checked">Other<br>
-            </div>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <th scope="row">Surface</th>
+                  <td colspan="2">
+                    <div class="checkbox">
+                      <input class="checkbox checkboxSurface" type="checkbox" value="紅土[clay]"
+                        checked="checked">Clay<br>
+                      <input class="checkbox checkboxSurface" type="checkbox" value="硬地[hard]"
+                        checked="checked">Hard<br>
+                      <input class="checkbox checkboxSurface" type="checkbox" value="草地[grass]"
+                        checked="checked">Others<br>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Type</th>
+                  <td colspan="2">
+                    <div class="checkbox">
+                      <input class="checkboxOwnerType" type="checkbox" value="公共設施[Public]" checked="checked">Public<br>
+                      <input class="checkboxOwnerType" type="checkbox" value="高中或國中小[School]"
+                        checked="checked">School<br>
+                      <input class="checkboxOwnerType" type="checkbox" value="大專院校[University]"
+                        checked="checked">University<br>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <input class="checkboxOwnerType" type="checkbox" value="俱樂部[club]" checked="checked">Club<br>
+                    <input class="checkboxOwnerType" type="checkbox" value="私人場地[private]"
+                      checked="checked">Private<br>
+                    <input class="checkboxOwnerType" type="checkbox" value="其他[other]" checked="checked">Other<br>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-            <div class="checkbox">
-              <label>Theme Map</label><br>
-              <input id="themeLayer" type="checkbox" value="night">Night Mode<br>
-
-            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -101,9 +118,9 @@
 
 
     <!--search-->
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control" type="search" placeholder="Search Court" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0 rounded" type="submit">GO</button>
+    <form class="my-form form-inline my-2 justify-content-center">
+      <input class="my-form-control form-control" type="search" placeholder="Search Court" aria-label="Search">
+      <button class="my-btn btn my-2 my-sm-0 rounded" type="submit">GO</button>
     </form>
 
     </nav>
@@ -118,12 +135,17 @@
       <!-- 地圖 -->
       <div id="map-container"></div>
 
-
+      <!-- 地圖日夜切換 -->
+      <div class="checkbox">
+        <label>Theme Map</label><br>
+        <input id="themeLayer" type="checkbox" value="night">Night Mode<br>
+      </div>
+      
       <!-- 底圖切換 -->
       <select id="base-maps">
         <option value="OSMStandard">OSM Standard</option>
         <option value="mapboxStandard">Mapbox Standard</option>
-        <option value="mapboxSatellite">Mapbox Satellite</option>
+        <option value="mapboxSatellite" selected="selected">Mapbox Satellite</option>
         <option value="cartoLight">Carto Light</option>
         <option value="cartoDark">Carto Dark</option>
         <option value="stamen">Stamen</option>

@@ -138,3 +138,20 @@ header .site-title {
     font-size: 80px;
     font-family: var(--oswald);
 }
+
+.my-form-control{
+    z-index: 10;
+    width: 80% !important;
+    opacity: 65%;
+}
+
+.my-form {
+    z-index: 10;
+    width: 70%
+}
+
+.my-btn{
+    z-index: 10;
+    color: white !important; 
+    background-color: var(--primary-color) !important; 
+}
