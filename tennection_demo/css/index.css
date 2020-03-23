@@ -141,13 +141,14 @@ header .site-title {
 
 .my-form-control{
     z-index: 10;
-    width: 80% !important;
     opacity: 65%;
+    left: 2px;
 }
 
 .my-form {
     z-index: 10;
-    width: 70%
+    width: 70%;
+    left: 5px !important;
 }
 
 .my-btn{

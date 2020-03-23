@@ -1,48 +1,45 @@
-.btn-filter{
+.btn-filter {
   position: absolute;
-  top: 10%;
-  right: 15%;
-  font-size: medium;
 }
 
-#div-relative{
-  position:relative;
-} 
-
-#map-container{
-  position: absolute;
-  width:100%;
-  top:0;
-  z-index:0; 
+#div-relative {
+  position: relative;
 }
 
-#banner{ 
-  position:absolute;
+#map-container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 0;
+}
+
+#banner {
+  position: absolute;
   width: 100%;
   margin: 0 auto;
-  z-index:100;
-  height:30px;
-  opacity:0.95; 
-  font-size:x-large; 
+  z-index: 100;
+  height: 30px;
+  opacity: 0.95;
+  font-size: x-large;
   color: yellowgreen;
   text-align: justify;
   background-color: floralwhite;
   text-align: center;
   vertical-align: middle;
-} 
+}
 
-#navi{ 
-  position:absolute;
+#navi {
+  position: absolute;
   top: 5%;
   left: 50%;
-  z-index:9;
-  width:70%;
-  height:50px;
-  opacity:0.8; 
-  font-size:medium; 
+  z-index: 9;
+  width: 70%;
+  height: 50px;
+  opacity: 0.8;
+  font-size: medium;
   margin: 0 0 0 -35%;
   text-align: justify;
-} 
+}
 
 #navi:after {
   content: '';
@@ -54,32 +51,196 @@
   display: inline-block;
   background-color: violet;
   border-radius: 30px;
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
+  /* Green */
   border: none;
   color: white;
   padding: 5px;
   text-align: center;
 }
 
+#court-selector {
+  position: absolute;
+  left: 2px;
+  top: 130px;
+  z-index: 100;
+}
+
+#mySidenavOpen {
+  position: absolute;
+  left: 4px;
+  z-index: 80;
+  font-weight: 800;
+}
+
+#mySidenav {
+  position: absolute;
+  z-index: 90;
+}
+
+#search-input {
+  border-radius: 10px 0px 0px 0px;
+}
+
+#search-go {
+  border-radius: 0px 0px 20px 0px;
+  margin-left: 5px;
+}
+
+#base-layers {
+  position: absolute;
+  right: 2px;
+  bottom: 50px;
+  z-index: 100;
+}
+
+#base-maps {
+  position: absolute;
+  left: 2px;
+  top: 30%;
+}
+
+.div-map-tool {
+  position: relative;
+  left: 2px;
+  width: 15%
+}
+
+.map-tools {
+  position: absolute;
+  z-index: 100;
+}
+
+.div-mode-list{
+  position: relative;
+  font-size: 15px;
+  font-family: 'Microsoft JhengHei';
+  font-weight: bold;
+  float: left;
+  margin-left: 2px;
+  border: none;
+  background: none;
+}
+
+.div-mode-list-op{
+  position: relative;
+  font-size: 15px;
+  font-family: 'Microsoft JhengHei';
+  font-weight: bold;
+  float: left;
+  margin-left: 2px;
+  border: none;
+  background: none;
+  color: tomato;
+}
+
+.div-mode-list-f{
+  background-color: rgba(2,2,2,0.7);
+  position: relative;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 20px;
+  color: aliceblue;
+  border: none;
+}
+
+.day-night-image {
+  width: 20px;
+  height: 20px;
+  background-image: "../data/moon.png";
+}
+
+.btn-maptool {
+  border: none !important;
+  margin: 1px;
+  z-index: 10 !important;
+  color: white !important;
+  background: rgba(231, 238, 252, 0.2) !important;
+}
+
+.btn-maptool:hover {
+  background: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.base-map-item {
+  width: 50px;
+  margin: 3px;
+  padding: 3px;
+  border-radius: 6%;
+}
+
+#base-map-div {
+  background: rgba(230, 230, 230, 0.6);
+  width: 120px;
+  display: none;
+  border-radius: 6%;
+}
 
 
+/* 資訊欄 */
+.court-name-class{
+  font-weight: bold;
+}
 
+/* info-box 設定 media query*/
 
-#court-selector{ position:absolute;left:2px;top:130px;z-index:100;} 
+@media screen and (min-width: 200px) and (max-width: 960px) {
+  #info-box {
+    background-color: whitesmoke;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    padding: 0.5em;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 0.8em;
+  }
+}
 
-#mySidenavOpen{ position:absolute;left:4px;z-index:80;font-weight: 800;} 
+@media screen and (min-width: 960px) {
+  #info-box {
+    background-color: whitesmoke;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    padding: 5em 0.5em 0.5em 0.5em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 0.8em;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+}
 
-#mySidenav{ position:absolute;z-index:90;} 
+.my-info-box {
+  display: none;
+  box-shadow: 0 0 10px 0 gray;
+  font-family: "Microsoft JhengHei";
+}
 
-#base-layers{ position:absolute;right:2px;bottom:50px;z-index:100;} 
+.info-box-content {
+  width: 100%;
+}
 
-#base-maps{ position:absolute;right:2px;bottom:50px;z-index:100;} 
+#test-button {
+  position: absolute;
+  right: 2px;
+  bottom: 250px;
+  z-index: 200;
+}
 
-#test-button{ position:absolute;right:2px;bottom:250px;z-index:200;} 
+#court_selector {
+  display: none;
+  font-weight: 400;
+  padding: 8px 8px 8px 32px;
+  color: #ebebeb;
+}
 
-#court_selector{ display:none; font-weight: 400; padding: 8px 8px 8px 32px; color: #ebebeb;} 
-
-.checkboxSurface{
+.checkboxSurface {
   color: #f1f1f1;
   transition: 0.3s;
 }
@@ -92,53 +253,59 @@
   top: 6em;
   left: .5em;
 }
+
 .ol-popup {
-position: absolute;
-background-color: white;
-box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-padding: 15px;
-border-radius: 10px;
-border: 1px solid #cccccc;
-bottom: 12px;
-left: -50px;
-min-width: 280px;
-}
-.ol-popup:after, .ol-popup:before {
-top: 100%;
-border: solid transparent;
-content: " ";
-height: 0;
-width: 0;
-position: absolute;
-pointer-events: none;
-}
-.ol-popup:after {
-border-top-color: white;
-border-width: 10px;
-left: 48px;
-margin-left: -10px;
-}
-.ol-popup:before {
-border-top-color: #cccccc;
-border-width: 11px;
-left: 48px;
-margin-left: -11px;
-}
-.ol-popup-closer {
-text-decoration: none;
-position: absolute;
-top: 2px;
-right: 8px;
-}
-.ol-popup-closer:after {
-content: "✖";
-}
-#popup-content{
-  font-size: small;
-  font-family: 'Microsoft JhengHei';
-  padding:0px;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  bottom: 12px;
+  left: -50px;
+  min-width: 280px;
 }
 
+.ol-popup:after, .ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.ol-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px;
+}
+
+.ol-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px;
+}
+
+.ol-popup-closer {
+  text-decoration: none;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+}
+
+.ol-popup-closer:after {
+  content: "✖";
+}
+
+#popup-content {
+  font-size: small;
+  font-family: 'Microsoft JhengHei';
+  padding: 0px;
+}
 
 .sidenav {
   height: 100%;
@@ -176,7 +343,10 @@ content: "✖";
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
-

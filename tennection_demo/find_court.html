@@ -35,21 +35,34 @@
     <div class="container-fluid">
       <div class="row my-row">
 
-        <div class="col-6 bg-dark">
-          <h2 class="site-title primary-color">Tennection</h2>
+        <div class="col-7 bg-dark">
+          <a class="nav-link-map" href="./index.html">
+            <h2 class="site-title primary-color">Tennection</h2>
+          </a>
+
         </div>
 
-        <div class="col-3 bg-dark">
+        <div class="col-5 text-right bg-dark">
+          <!--設定選單：登入、模式-->
+          <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link-map" href="./about.html">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-map" href="#">SIGN IN</a>
+              </li>
+            </ul>
+          </div>
+
 
         </div>
-        <div class="col-3 text-right bg-dark">
-          <p class=" header-links">
-            <a href="#" class="px-2">Sign In</a>
-          </p>
-        </div>
 
-        <button class="btn btn-filter btn-outline-info" data-toggle="modal"
-          data-target=".bd-example-modal-lg">filter</button>
 
       </div>
     </div>
@@ -72,18 +85,18 @@
               <tbody>
                 <tr>
                   <th scope="row">Surface</th>
-                  <td colspan="2">
+                  <td colspan="1">
                     <div class="checkbox">
                       <input class="checkbox checkboxSurface" type="checkbox" value="紅土[clay]"
                         checked="checked">Clay<br>
-                      <input class="checkbox checkboxSurface" type="checkbox" value="硬地[hard]"
-                        checked="checked">Hard<br>
-                      <input class="checkbox checkboxSurface" type="checkbox" value="草地[grass]"
-                        checked="checked">Others<br>
                     </div>
                   </td>
-                  <td colspan="2">
+                  <td colspan="1">
+                    <input class="checkbox checkboxSurface" type="checkbox" value="硬地[hard]" checked="checked">Hard<br>
                   </td>
+                  <td colspan="1">
+                    <input class="checkbox checkboxSurface" type="checkbox" value="草地[grass]"
+                      checked="checked">Others<br> </td>
                 </tr>
                 <tr>
                   <th scope="row">Type</th>
@@ -98,9 +111,20 @@
                   </td>
                   <td colspan="2">
                     <input class="checkboxOwnerType" type="checkbox" value="俱樂部[club]" checked="checked">Club<br>
-                    <input class="checkboxOwnerType" type="checkbox" value="私人場地[private]"
-                      checked="checked">Private<br>
+                    <input class="checkboxOwnerType" type="checkbox" value="私人場地[private]" checked="checked">Private<br>
                     <input class="checkboxOwnerType" type="checkbox" value="其他[other]" checked="checked">Other<br>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Charge</th>
+                  <td colspan="1">
+                    <input class="checkbox " type="checkbox" value="" checked="checked">Y<br>
+                  </td>
+                  <td colspan="1">
+                    <input class="checkbox " type="checkbox" value="" checked="checked">Free<br>
+                  </td>
+                  <td colspan="1">
+                    <input class="checkbox " type="checkbox" value="" checked="checked">Unknow<br>
                   </td>
                 </tr>
               </tbody>
@@ -109,19 +133,66 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary">Select all</button>
           </div>
         </div>
       </div>
     </div>
 
 
+    <!--buddy modal-->
+    <div class="modal fade bd-buddy-modal-lg" id="buddyModal" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Tennis Buddy Filter</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
 
-    <!--search-->
-    <form class="my-form form-inline my-2 justify-content-center">
-      <input class="my-form-control form-control" type="search" placeholder="Search Court" aria-label="Search">
-      <button class="my-btn btn my-2 my-sm-0 rounded" type="submit">GO</button>
-    </form>
+          <div class="modal-body">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <th scope="row">NTRP</th>
+                  <td colspan="2">
+                    <div class="checkbox">
+                      <input class="checkbox checkboxSurface" type="checkbox" value="" checked="checked">2.0<br>
+                      <input class="checkbox checkboxSurface" type="checkbox" value="" checked="checked">3.0<br>
+                      <input class="checkbox checkboxSurface" type="checkbox" value="" checked="checked">4.0<br>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Time</th>
+                  <td colspan="2">
+                    <div class="checkbox">
+                      <input class="checkboxOwnerType" type="checkbox" value="" checked="checked">0800-1000<br>
+                      <input class="checkboxOwnerType" type="checkbox" value="" checked="checked">1000-1200<br>
+                      <input class="checkboxOwnerType" type="checkbox" value="" checked="checked">1200-1400<br>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <input class="checkboxOwnerType" type="checkbox" value="" checked="checked">1400-1600<br>
+                    <input class="checkboxOwnerType" type="checkbox" value="" checked="checked">1600-1800<br>
+                    <input class="checkboxOwnerType" type="checkbox" value="" checked="checked">1800-2200<br>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Select all</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     </nav>
     </div>
@@ -135,29 +206,109 @@
       <!-- 地圖 -->
       <div id="map-container"></div>
 
+
+      <!--球場模式切換-->
+      <form class="my-form form-inline my-2">
+        <!--
+        <input id="search-input" class="col-5 my-form-control form-control" type="search" placeholder="Search"
+          aria-label="Search">
+        <button id="search-go" class="my-btn btn btn-maptool" type="submit">GO</button>-->
+        <div class="div-mode-list-f">
+          <div class="div-mode-list">MODE</div>
+          <select id="mode-list" class="div-mode-list-op">
+            <option value="find_court">FIND COURT</option>
+            <option value="find_buddy">FIND BUDDY</option>
+          </select>
+        </div>
+      </form>
+
+
+
+      <!-- 定位 -->
+      <div id="btn-locate" class="div-map-tool">
+        <button title="Locate me" class="btn-maptool btn btn-info">
+          <img src="./pictures/icon/locate.png" id="" class="day-night-image">
+        </button>
+      </div>
+
       <!-- 地圖日夜切換 -->
-      <div class="checkbox">
-        <label>Theme Map</label><br>
-        <input id="themeLayer" type="checkbox" value="night">Night Mode<br>
+      <div class="div-map-tool">
+        <button type="button" id="btn-daynight" class="btn-maptool btn btn-info" title="Day/Night">
+          <img src="./pictures/icon/sun.png" id="img-day-night" class="day-night-image">
+        </button>
       </div>
-      
+
+      <!-- 球場篩選 -->
+      <div class="div-map-tool">
+        <button class="btn btn-info btn-maptool" title="Filter" data-toggle="modal" data-target=".bd-example-modal-lg">
+          <img src="./pictures/icon/filter.png" id="" class="day-night-image">
+        </button>
+      </div>
+
+
       <!-- 底圖切換 -->
-      <select id="base-maps">
-        <option value="OSMStandard">OSM Standard</option>
-        <option value="mapboxStandard">Mapbox Standard</option>
-        <option value="mapboxSatellite" selected="selected">Mapbox Satellite</option>
-        <option value="cartoLight">Carto Light</option>
-        <option value="cartoDark">Carto Dark</option>
-        <option value="stamen">Stamen</option>
-      </select>
+      <div class="div-map-tool">
+        <button id="btn-base-map" type="button" class="btn btn-info btn-maptool" title="Base Map">
+          <img src="./pictures/icon/basemap.png" id="" class="day-night-image">
+        </button>
+      </div>
+      <div id="base-map-div" class="div-map-tool">
+        <img src="./pictures/icon/basemap_osm.png" id="OSMStandard" class="base-map-item" title="OSM">
+        <img src="./pictures/icon/basemap_mapbox_std.png" id="mapboxStandard" class="base-map-item" title="Mapbox Standard">
+        <img src="./pictures/icon/basemap_mapbox_st.png" id="mapboxSatellite" class="base-map-item" title="Mapbox Satellite">
+        <img src="./pictures/icon/basemap_carto_light.png" id="cartoLight" class="base-map-item" title="Carto Light">
+        <img src="./pictures/icon/basemap_carto_dark.png" id="cartoDark" class="base-map-item" title="Carto Dark">
+        <img src="./pictures/icon/basemap_steman.png" id="stamen" class="base-map-item" title="Stamen">
+      </div>
 
-      <!-- popup -->
-      <div id="popup" class="ol-popup">
-        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-        <div id="popup-content"></div>
+    </div>
+
+
+
+    <!-- popup -->
+    <div id="popup" class="ol-popup">
+      <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+      <div id="popup-content"></div>
+    </div>
+
+    <!-- infobox -->
+    <div id="info-box" class="my-info-box map-tools">
+      <button type="button" id="infobox-close" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div id="" class="container-fluid p-1">
+        <h6 id="court-name" class="court-name-class"></h6>
+        <h8 id="weather"></h8>
+        <div class="row">
+          <div class="col-5 col-lg-12 mode-court info-box-content">
+            <div id="photo">暫無照片</div>
+            <div id="star">暫無評價</div>
+            <div id="open-gmap">導航(GoogleMap)</div>
+          </div>
+          <div class="col-7 col-lg-12 mode-court">
+            <div id="surface"></div>
+            <div id="tel"></div>
+            <div id="address"></div>
+            <div id="type"></div>
+            <div id="charge"></div>
+            <div id="description">無相關描述</div>
+            <div id="light">無相關資訊</div>
+          </div>
+          <div class="col-12 mode-court">
+            <div id="validate">資訊驗證：暫無</div>
+            <button type="button" class="btn btn-info">提供資訊</button>
+          </div>
+
+          <div class="col-12 mode-buddy">
+            <h6 id="event">揪團數：<a href="">3</a></h6>
+            <button type="button" class="btn btn-success">訂閱球場</button>
+            <button type="button" class="btn btn-danger">發起活動</button>
+          </div>
+        </div>
 
 
       </div>
+    </div>
 
     </div>
 
@@ -170,10 +321,6 @@
 
 
   <!--CDNs-->
-
-
-  <!--<script type="text/javascript" src="./js/jquery/jquery-3.4.1.min.js"></script>-->
-  <!--<script type="text/javascript" src="./js/jquery/jquery-migrate-3.1.0.min.js"></script>-->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
@@ -186,7 +333,7 @@
     crossorigin="anonymous"></script>
 
 
-  <script src="./js/main.js"></script>
+  
 <script type="text/javascript" src="main.js"></script></body>
 
 </html>
